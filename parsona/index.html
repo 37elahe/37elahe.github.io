@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" href="/assets/system.css" />
+	<title> Parsa's test </title>
+<link rel="modulepreload" href="/parsona/Parsa-14c5de32c7d9bf3e.js" crossorigin="anonymous" integrity="sha384-TafxRXz523NHIuBpk74lxbSPhDhVbXOuVAQeWP0bCU9ocO7uhJur1/Zvbb8+CRkK"><link rel="preload" href="/parsona/Parsa-14c5de32c7d9bf3e_bg.wasm" crossorigin="anonymous" integrity="sha384-2RqkpqiM8azJFyNk5aEeyTJ4Lr3tKtkR+xOvur7/0MpiyfLFt4XGyzmvCy8xy537" as="fetch" type="application/wasm"></head>
+<style>
+::selection
+{
+	color: white;
+	background-color: black;
+}
+:focus 
+{
+	outline: 4px solid black;
+}
+*
+{
+	font-family: "Chicago", sans-serif !important;
+	white-space: pre-line;
+}
+.window-pane button
+{
+	margin: 1%;
+	font-size: .8em;
+}
+li
+{
+	margin-right: 25%;
+	margin-left:  5%;
+}
+@media (max-width: 500px)
+{
+	li { margin-right: 15%; }
+	.window-pane button
+	{
+		margin-top: 3%;
+	}
+}
+</style>
+<body>
+
+<script type="module">
+import init, * as bindings from '/parsona/Parsa-14c5de32c7d9bf3e.js';
+const wasm = await init({ module_or_path: '/parsona/Parsa-14c5de32c7d9bf3e_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+
+</html>
