@@ -718,6 +718,6 @@ c,.,'.......................             ........                    ... .'.' ',
 
 	document.addEventListener("pointermove", (e) =>
 	{
-		pos.textContent = `${e.clientX},${e.clientY}`;
+		pos.textContent = `${Math.round(e.clientX)},${Math.round(e.clientY)}`;
 	});
 </script>
